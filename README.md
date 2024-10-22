@@ -1,50 +1,63 @@
-# React + TypeScript + Vite
+React + TypeScript + Vite Map Application
+This project is a minimal setup for building a map application using React, TypeScript, and Vite. The application features an interactive map displaying markers with toggling status functionality, and it is optimized for offline use with service workers.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Features
+React for building user interfaces
+TypeScript for type safety
+Vite for fast development and HMR (Hot Module Replacement)
+OpenLayers for mapping functionality
+PWA (Progressive Web App) support for offline access
+Installation
+To get started with this project, follow these steps:
 
-Currently, two official plugins are available:
+Clone the repository:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+bash
+Copy code
+git clone https://github.com/your-username/react-typescript-vite-map-app.git
+cd react-typescript-vite-map-app
+Install dependencies:
 
-## Expanding the ESLint configuration
+bash
+Copy code
+npm install
+Run the development server:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+bash
+Copy code
+npm run dev
+Open your browser and navigate to http://localhost:3000.
 
-- Configure the top-level `parserOptions` property like this:
+Usage
+Markers
+The application displays markers on a map that can be toggled on or off. Click on a marker to view its details and change its status using the toggle switch.
 
-```js
+![Map image](assets/map-image.png)
+Offline Mode
+This application uses service workers to provide offline capabilities. When offline, the app will display cached content.
+
+![Toggle off](assets/toggle-off.png)
+![Toggle on](assets/toggle-on.png)
+
+Configuration
+ESLint
+This project uses ESLint for code quality. To configure ESLint for TypeScript, ensure your .eslintrc.js file includes:
+
+javascript
+Copy code
 export default tseslint.config({
   languageOptions: {
-    // other options...
     parserOptions: {
       project: ['./tsconfig.node.json', './tsconfig.app.json'],
       tsconfigRootDir: import.meta.dirname,
     },
   },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
+  settings: { react: { version: 'detect' } },
   plugins: {
-    // Add the react plugin
-    react,
+    react: require('eslint-plugin-react'),
   },
   rules: {
-    // other rules...
-    // Enable its recommended rules
     ...react.configs.recommended.rules,
     ...react.configs['jsx-runtime'].rules,
   },
-})
-```
+});

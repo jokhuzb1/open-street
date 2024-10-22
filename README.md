@@ -32,12 +32,12 @@ Usage
 Markers
 The application displays markers on a map that can be toggled on or off. Click on a marker to view its details and change its status using the toggle switch.
 
-![Map image](assets/map-image.png)
+![Map image](src/assets/map-image.png)
 Offline Mode
 This application uses service workers to provide offline capabilities. When offline, the app will display cached content.
 
-![Toggle off](assets/toggle-off.png)
-![Toggle on](assets/toggle-on.png)
+![Toggle off](src/assets/toggle-off.png)
+![Toggle on](src/assets/toggle-on.png)
 
 Configuration
 ESLint

@@ -39,6 +39,8 @@ This application uses service workers to provide offline capabilities. When offl
 ![Toggle off](src/assets/toggle-off.png)
 ![Toggle on](src/assets/toggle-on.png)
 
+For mobile phone (PWA) 
+![MapApp](src/assets/sd.jpg)
 Configuration
 ESLint
 This project uses ESLint for code quality. To configure ESLint for TypeScript, ensure your .eslintrc.js file includes:
